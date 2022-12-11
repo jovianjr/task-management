@@ -86,8 +86,6 @@ function App() {
 		setTask((prevState) => {
 			let newTask = JSON.parse(JSON.stringify(prevState));
 
-			console.log(newTask);
-
 			newTask[currIndex].comments.push({
 				content: comment,
 				createdAt: new Date(),
