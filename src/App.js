@@ -12,7 +12,7 @@ const initialTask = [
 		comments: [
 			{
 				content: 'This is comment A',
-				createdAt: new Date(),
+				createdAt: new Date('October 13, 2022 2:11:00'),
 			},
 		],
 	},
@@ -25,7 +25,7 @@ const initialTask = [
 		comments: [
 			{
 				content: 'This is comment B',
-				createdAt: new Date(),
+				createdAt: new Date('December 11, 2022 11:13:00'),
 			},
 		],
 	},
@@ -38,7 +38,7 @@ const initialTask = [
 		comments: [
 			{
 				content: 'This is comment C',
-				createdAt: new Date(),
+				createdAt: new Date('December 8, 2022 7:52:00'),
 			},
 		],
 	},
@@ -82,16 +82,16 @@ function App() {
 
 	const addComment = (comment) => {
 		const currIndex = task.findIndex((o) => o.id === currentTaskID);
-		const currTask = currentTask;
-
-		currTask.comments.push({
-			content: comment,
-			createdAt: new Date(),
-		});
 
 		setTask((prevState) => {
 			let newTask = JSON.parse(JSON.stringify(prevState));
-			newTask[currIndex] = currTask;
+
+			console.log(newTask);
+
+			newTask[currIndex].comments.push({
+				content: comment,
+				createdAt: new Date(),
+			});
 
 			return newTask;
 		});

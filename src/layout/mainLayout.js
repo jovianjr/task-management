@@ -18,7 +18,14 @@ const Layout = ({
 			>
 				{header}
 			</div>
-			<div className={clsx('flex-grow bg-white', className)}>{children}</div>
+			<div
+				className={clsx(
+					'flex-grow bg-white max-h-full overflow-y-auto',
+					className
+				)}
+			>
+				{children}
+			</div>
 			<div
 				className={clsx(
 					'bg-slate-100 border-y border-slate-300',

@@ -48,9 +48,9 @@ const TaskDetail = ({ task, addComment, updateDescription }) => {
 								<ClockIcon className="w-4 h-4" />
 								<span>
 									{moment
-										.utc(task?.createdAt)
+										.utc(comment?.createdAt)
 										.local()
-										.format('DD MMMM YYYY hh:mm A')}
+										.format('DD MMMM YYYY hh:mm:ss A')}
 								</span>
 							</p>
 						</div>
